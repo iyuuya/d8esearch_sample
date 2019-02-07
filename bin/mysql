@@ -1,0 +1,6 @@
+#!/bin/sh
+
+__cmd="docker-compose exec drupal mysql -uroot"
+
+echo "${__cmd} $*"
+${__cmd} $*

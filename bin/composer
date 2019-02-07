@@ -1,0 +1,6 @@
+#!/bin/sh
+
+__cmd="docker-compose exec drupal composer"
+
+echo "${__cmd} $*"
+${__cmd} $*

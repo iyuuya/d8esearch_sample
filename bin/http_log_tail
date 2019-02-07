@@ -1,0 +1,12 @@
+#!/bin/sh
+
+function __cmd() {
+  files=""
+  for name in $*; do
+    files="$files /var/log/httpd/$name"
+  done
+  echo "docker-compose exec drupal tail -f $files"
+  docker-compose exec drupal tail -f $files
+}
+
+__cmd $*

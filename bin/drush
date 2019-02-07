@@ -1,0 +1,6 @@
+#!/bin/sh
+
+__cmd="docker-compose exec drupal vendor/bin/drush"
+
+echo "${__cmd} $*"
+${__cmd} $*
