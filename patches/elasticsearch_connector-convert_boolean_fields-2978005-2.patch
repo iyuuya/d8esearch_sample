@@ -1,0 +1,15 @@
+diff --git a/web/modules/contrib/elasticsearch_connector/src/ElasticSearch/Parameters/Factory/IndexFactory.php b/web/modules/contrib/elasticsearch_connector/src/ElasticSearch/Parameters/Factory/IndexFactory.php
+index 6e747ad..2b734e2 100644
+--- a/web/modules/contrib/elasticsearch_connector/src/ElasticSearch/Parameters/Factory/IndexFactory.php
++++ b/web/modules/contrib/elasticsearch_connector/src/ElasticSearch/Parameters/Factory/IndexFactory.php
+@@ -129,6 +129,10 @@ class IndexFactory {
+                 $values[] = $value->toText();
+                 break;
+
++              case 'boolean':
++                $values[] = (boolean) $value;
++                break;
++
+               default:
+                 $values[] = $value;
+             }
