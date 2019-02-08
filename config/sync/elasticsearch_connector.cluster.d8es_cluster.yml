@@ -1,0 +1,14 @@
+uuid: fc0464cf-584e-45bc-a09a-8bd4d205a67b
+langcode: en
+status: '1'
+dependencies: {  }
+cluster_id: d8es_cluster
+name: d8es-cluster
+url: 'http://elasticsearch:9200'
+options:
+  multiple_nodes_connection: false
+  use_authentication: 0
+  authentication_type: Basic
+  username: ''
+  password: ''
+  timeout: '3'
