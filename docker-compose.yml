@@ -21,6 +21,8 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     networks:
       - d8esnet
+    volumes:
+      - mysqldata:/var/lib/mysql
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.6.0
