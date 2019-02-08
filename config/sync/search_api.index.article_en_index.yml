@@ -2,16 +2,25 @@ uuid: e5e654ee-b143-4a55-ab04-f3a2ce044aeb
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.storage.node.body
+    - search_api.server.elasticsearch_server
   module:
     - node
     - search_api
-  config:
-    - search_api.server.elasticsearch_server
 id: article_en_index
 name: 'Article Index (EN)'
 description: "for only Articles index.\r\nExclude Basic Page or others."
 read_only: false
 field_settings:
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
   node_grants:
     label: 'Node access information'
     property_path: search_api_node_grants
@@ -44,6 +53,14 @@ field_settings:
     type: boolean
     indexed_locked: true
     type_locked: true
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
     dependencies:
       module:
         - node
